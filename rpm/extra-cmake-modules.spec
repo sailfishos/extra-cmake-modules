@@ -1,8 +1,8 @@
 Name:        extra-cmake-modules
-Version:     5.47.0
+Version:     5.75.0
 Release:     1
 Summary:     The Extra CMake Modules package
-License:     BSD-3-Clause
+License:     BSD
 URL:         https://cgit.kde.org/extra-cmake-modules.git
 Source0:     %{name}-%{version}.tar.gz
 BuildRequires: cmake
@@ -14,20 +14,20 @@ used by find_package() to find common software, ones that can be used directly i
 files to perform common tasks and toolchain files that must be specified on the commandline by the user.
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%autosetup -n %{name}-%{version}/%{name}
 
 %build
-cmake . -DCMAKE_BUILD_TYPE=release -DCMAKE_INSTALL_PREFIX=%{_prefix}
-%{__make} %{?_smp_mflags}
+%cmake
+%make_build
 
 %install
-%{make_install}
+%make_install
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %files
-%doc COPYING-CMAKE-SCRIPTS README.rst
+%license COPYING-CMAKE-SCRIPTS
 %{_datarootdir}/ECM/modules/*
 %{_datarootdir}/ECM/test-modules/*
 %{_datarootdir}/ECM/kde-modules/*
