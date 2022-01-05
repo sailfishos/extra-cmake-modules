@@ -1,5 +1,5 @@
 Name:        extra-cmake-modules
-Version:     5.85.0
+Version:     5.90.0
 Release:     1
 Summary:     The Extra CMake Modules package
 License:     BSD
@@ -22,9 +22,6 @@ files to perform common tasks and toolchain files that must be specified on the 
 
 %install
 %make_install
-
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
 
 %files
 %license COPYING-CMAKE-SCRIPTS
