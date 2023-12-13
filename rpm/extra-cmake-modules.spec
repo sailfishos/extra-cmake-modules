@@ -1,5 +1,5 @@
 Name:        extra-cmake-modules
-Version:     5.99.0
+Version:     5.112.0
 Release:     1
 Summary:     The Extra CMake Modules package
 License:     BSD
